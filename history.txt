@@ -1,0 +1,5 @@
+Who was the first President of the United States?;Thomas Jefferson;George Washington;Abraham Lincoln;John Adams;1
+In which year did World War II end?;1945;1939;1918;1950;0
+Which ancient civilization built the pyramids?;Greeks;Romans;Egyptians;Mesopotamians;2
+Who discovered America in 1492?;Vasco da Gama;Christopher Columbus;Ferdinand Magellan;Leif Erikson;1
+The French Revolution began in which year?;1776;1789;1804;1799;1

@@ -1,0 +1,5 @@
+your score for quiz java_basics.txt is := 20 given at time := [2025-10-03T22:18:11.119002500]
+your score for quiz math.txt is := 0 given at time := [2025-10-03T23:26:28.404400200]
+your score for quiz java_basics.txt is := 30 given at time := [2025-10-03T23:26:52.437524900]
+your score for quiz math.txt is := 0 given at time := [2025-10-03T23:30:52.384920]
+your score for quiz math.txt is := 50 given at time := [2025-10-03T23:33:01.250885800]
