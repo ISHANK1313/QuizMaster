@@ -1,0 +1,7 @@
+your score for quiz java_basics.txt is := 40 given at time := [ Date is :=2025-10-05,Time is := 00:37:18]
+your score for quiz history.txt is := 10 given at time := [ Date is :=2025-10-05,Time is := 00:39:17]
+your score for quiz math.txt is := 20 given at time := [ Date is :=2025-10-05,Time is := 00:44:57]
+your score for quiz math.txt is := 10 given at time := [ Date is :=2025-10-05,Time is := 00:48:33]
+your score for quiz math.txt is := 10 given at time := [ Date is :=2025-10-05,Time is := 00:50:48]
+your score for quiz history.txt is := 50 given at time := [ Date is :=2025-10-05,Time is := 00:52:06]
+your score for quiz math.txt is := 10 given at time := [ Date is :=2025-10-05,Time is := 00:53:07]

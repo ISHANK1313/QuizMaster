@@ -30,9 +30,8 @@ public class  Quiz_App {
         List<Question> questions = new ArrayList<>();
         try {
 
-            String currentDir = System.getProperty("user.dir");
-            File file = new File(currentDir, fileName);
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            InputStream stream = Quiz_App.class.getResourceAsStream("/" + fileName);
+            BufferedReader br = new BufferedReader(new InputStreamReader(stream));
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
@@ -110,16 +109,26 @@ public class  Quiz_App {
 
     }
 
-    public static void saveScore()  {
-       try{ FileWriter writer= new FileWriter("Saved_Score.txt",true);
-        LocalDateTime timestamp=LocalDateTime.now();
-        String now=timestamp.toString();
-        String [] date=now.split("T");
-        writer.write("your score for quiz "+currentFileName+" is := "+score+" given at time := [ Date is :="+date[0]+",Time is := "+date[1].substring(0,8)+ "]"+"\n");
-        writer.close();}
-       catch (IOException e){
-           e.printStackTrace();
-       }
+    public static void saveScore() {
+        try {
+            // Get the directory where the JAR is located
+            String jarDir = new File(Quiz_App.class.getProtectionDomain()
+                    .getCodeSource().getLocation().toURI())
+                    .getParent();
+            File scoreFile = new File(jarDir, "Saved_Score.txt");
+
+            FileWriter writer = new FileWriter(scoreFile, true);
+            LocalDateTime timestamp = LocalDateTime.now();
+            String now = timestamp.toString();
+            String[] date = now.split("T");
+            writer.write("your score for quiz " + currentFileName + " is := " + score +
+                    " given at time := [ Date is :=" + date[0] +
+                    ",Time is := " + date[1].substring(0,8) + "]" + "\n");
+            writer.close();
+            System.out.println("Score saved to: " + scoreFile.getAbsolutePath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 public static void display()  {
@@ -235,34 +244,38 @@ selectorFrame.setVisible(true);
 
 }
 
-public static void playSound(String fileName){
-    new Thread(() -> {
-        try {
+    public static void playSound(String fileName){
+        new Thread(() -> {
+            try {
+                InputStream stream = Quiz_App.class.getResourceAsStream("/sounds/" + fileName);
 
-            InputStream stream = Quiz_App.class.getResourceAsStream("/sounds/" + fileName);
-
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(stream);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
+                if (stream == null) {
+                    System.out.println("Sound file not found: " + fileName);
+                    return;
+                }
 
 
-            while (!clip.isRunning()) {
-                Thread.sleep(10);
+                BufferedInputStream bufferedStream = new BufferedInputStream(stream);
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(bufferedStream);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+
+                while (!clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+                while (clip.isRunning()) {
+                    Thread.sleep(10);
+                }
+
+                clip.close();
+
+            } catch (Exception e) {
+                System.out.println("Error playing sound: " + fileName);
+                e.printStackTrace();
             }
-            while (clip.isRunning()) {
-                Thread.sleep(10);
-            }
-
-            clip.close();
-
-        } catch (Exception e) {
-            System.out.println("Error playing sound: " + fileName);
-            e.printStackTrace();
-        }
-    }).start();
-
-}
+        }).start();
+    }
 
 public static void positionComponentsWithoutImage(){
         imageLabel.setVisible(false);

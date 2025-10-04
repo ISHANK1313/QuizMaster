@@ -1,0 +1,2 @@
+your score for quiz history.txt is := 30 given at time := [ Date is :=2025-10-05,Time is := 00:20:20]
+your score for quiz math.txt is := 20 given at time := [ Date is :=2025-10-05,Time is := 00:49:41]

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Quiz_App:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Quiz_App_jar</output-path>
+    <root id="archive" name="Quiz_App.jar">
+      <element id="module-output" name="Quiz_App" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/production/Quiz_App/images" />
+      <element id="file-copy" path="$PROJECT_DIR$/history.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/java_basics.txt" />
+      <element id="file-copy" path="$PROJECT_DIR$/math.txt" />
+      <element id="dir-copy" path="$PROJECT_DIR$/out/production/Quiz_App/sounds" />
+    </root>
+  </artifact>
+</component>
