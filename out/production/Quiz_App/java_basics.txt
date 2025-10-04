@@ -1,3 +1,4 @@
 What is the entry point of a Java program?;main method;start method;init method;run method;0
 Which keyword is used to inherit a class?;extends;inherits;super;this;0
 What is the size of int in Java?;32 bits;16 bits;64 bits;8 bits;0
+What is this logo?;Java;Python;C++;JavaScript;0;/images/java.png
