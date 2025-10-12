@@ -110,7 +110,7 @@
 1. **Download the JAR file**
    ```bash
    # Clone this repository
-   git clone https://github.com/yourusername/quiz-app.git
+   git clone https://github.com/ISHANK1313/quiz-app.git
    cd quiz-app
    ```
 
